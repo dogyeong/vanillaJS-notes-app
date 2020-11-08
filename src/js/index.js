@@ -3,5 +3,5 @@ import Model from './model.js';
 
 const $app = document.getElementById('app');
 
-new View($app);
-new Model();
+const NoteModel = new Model();
+const NoteView = new View($app, NoteModel);
