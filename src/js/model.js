@@ -1,10 +1,14 @@
 const Model = function () {
   this.notes = [];
+  this.observer = '';
 };
 
 Model.prototype.addNote = function (note) {
   this.notes.push(note);
-  console.log(this.notes);
+  this.observer( this.notes);
+  console.log(this.observer);
+
+
 };
 
 export default Model;

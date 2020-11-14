@@ -3,7 +3,9 @@ const View = function ($target, Model) {
   this.Model = Model;
 
   this.init();
-  this.render();
+  this.render([]);
+
+  this.Model.observer = this.render.bind(this);
 };
 
 View.prototype.init = function () {
@@ -15,13 +17,25 @@ View.prototype.init = function () {
   });
 };
 
-View.prototype.render = function () {
+View.prototype.render = function (modelNote) {
+
   this.$target.innerHTML = `
     <div class="container">
       <input type="text" />
       <button type="button" class="add-btn">추가</button>
+      <ul class="noteList">
+        ${modelNote.map( (v)=>`<li>${v}</li>`).join('')}
+      </ul>
     </div>
   `;
+
+  
+  
+  
+
+  
+
+
 };
 
 export default View;
