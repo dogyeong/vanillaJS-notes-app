@@ -1,0 +1,15 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"], // ESLint의 formatting 관련 설정 중 Prettier와 충돌하는 부분을 비활성화 한다.
+  "plugins": ["prettier"], // Prettier를 ESLint 플러그인으로 추가한다. 즉, Prettier에서 인식하는 코드상의 포맷 오류를 ESLint 오류로 출력해준다.
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}

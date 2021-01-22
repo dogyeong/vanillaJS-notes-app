@@ -1,0 +1,26 @@
+{
+  "name": "note-app",
+  "version": "1.0.0",
+  "description": "NOTE APP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dogyeong/note-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dogyeong/note-app/issues"
+  },
+  "homepage": "https://github.com/dogyeong/note-app#readme",
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
+  }
+}

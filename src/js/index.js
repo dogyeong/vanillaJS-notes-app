@@ -1,7 +1,6 @@
-import View from './view.js';
-import Model from './model.js';
+import Controller from './controller.js';
 
 const $app = document.getElementById('app');
+const app = new Controller($app);
 
-const NoteModel = new Model();
-const NoteView = new View($app, NoteModel);
+app.run();
