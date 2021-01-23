@@ -1,10 +1,5 @@
-import Event from './event.js';
-
-const VIEW_MODE = {
-  LIST: 0,
-  ADD: 1,
-  DETAIL: 2,
-};
+import Event from '../utils/event.js';
+import { VIEW_MODE } from '../utils/viewMode.js';
 
 const NoteApp = function () {
   this.notes = [];
@@ -15,13 +10,24 @@ const NoteApp = function () {
 };
 
 NoteApp.prototype.init = function () {
+  const notes = localStorage.getItem('notes');
+  this.notes = notes ? JSON.parse(notes) : [];
   this.noteUpdateEvent.trigger(this.viewMode, this.notes);
 };
 
 NoteApp.prototype.addNote = function (title, text, id) {
-  this.notes.push({ id, title, text });
-  this.viewMode = VIEW_MODE.LIST;
-  this.noteUpdateEvent.trigger(this.viewMode, this.notes);
+  const index = this.notes.findIndex((note) => note.id === id);
+  const note = { id, title, text };
+
+  if (index === -1) {
+    this.notes.push(note);
+  } else {
+    this.notes[index] = note;
+  }
+
+  this.viewMode = VIEW_MODE.DETAIL;
+  this.noteUpdateEvent.trigger(this.viewMode, note);
+  localStorage.setItem('notes', JSON.stringify(this.notes));
 };
 
 NoteApp.prototype.deleteNote = function (id) {
@@ -48,6 +54,12 @@ NoteApp.prototype.routeAddPage = function () {
 NoteApp.prototype.routeListPage = function () {
   this.viewMode = VIEW_MODE.LIST;
   this.routeEvent.trigger(this.viewMode, this.notes);
+};
+
+NoteApp.prototype.routeEditPage = function (id) {
+  const idx = this.notes.findIndex((note) => note.id === id);
+  this.viewMode = VIEW_MODE.EDIT;
+  this.routeEvent.trigger(this.viewMode, this.notes[idx]);
 };
 
 export default NoteApp;
