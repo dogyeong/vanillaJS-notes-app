@@ -16,8 +16,9 @@ NoteApp.prototype.init = function () {
 };
 
 NoteApp.prototype.addNote = function (title, text, id) {
+  const updatedAt = new Date().toLocaleDateString();
   const index = this.notes.findIndex((note) => note.id === id);
-  const note = { id, title, text };
+  const note = { id, title, text, updatedAt };
 
   if (index === -1) {
     this.notes.push(note);
