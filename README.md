@@ -1,6 +1,8 @@
 ## NOTE APP
 
-프로젝트는 다음 게시글을 참고했습니다.
+MVC 패턴과 바닐라JS를 이용한 노트 앱을 만든 토이프로젝트입니다.
+
+프로젝트는 다음 글을 참고했습니다.
 
 - [https://velog.io/@eunjin/Javascript-%EB%85%B8%ED%8A%B8%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0](https://velog.io/@eunjin/Javascript-%EB%85%B8%ED%8A%B8%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0)
 
