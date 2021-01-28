@@ -19,7 +19,7 @@ export const list = (notes) => `
 export const addPage = (id) => `
   <input type="text" class="note-title" placeholder="제목" />
   <textarea class="note-text" placeholder="내용" rows="5"></textarea>
-  <button class="save-btn" data-id=${id}>추가</button>
+  <button class="save-btn" data-id="${id}">추가</button>
   <button class="cancel-btn">취소</button>
 `;
 
@@ -29,13 +29,13 @@ export const detailPage = (notes) => `
     <p>${notes.text}</p>
   </div>
   <button class="cancel-btn">목록으로</button>
-  <button class="edit-btn" data-id=${notes.id}>수정</button>
-  <button class="del-btn" data-id=${notes.id}>삭제</button>
+  <button class="edit-btn" data-id="${notes.id}">수정</button>
+  <button class="del-btn" data-id="${notes.id}">삭제</button>
 `;
 
 export const editPage = (note) => `
-  <input type="text" class="note-title" placeholder="제목" value=${note.title} />
+  <input type="text" class="note-title" placeholder="제목" value="${note.title}" />
   <textarea class="note-text" placeholder="내용" rows="5">${note.text}</textarea>
-  <button class="save-btn" data-id=${note.id}>수정</button>
+  <button class="save-btn" data-id="${note.id}">수정</button>
   <button class="cancel-btn">취소</button>
 `;
